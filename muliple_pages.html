@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+</head>
+<body>
+
+<!-- Start of first page -->
+<div class="ui-page" data-role="page" id="foo">
+
+    <div data-role="header">
+        <h1>Foo</h1>
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <p>I'm first in the source order so I'm shown as the page.</p>
+        <p>View internal page called <a href="#bar">bar</a></p>
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div class="ui-page" data-role="page" id="bar">
+
+    <div data-role="header">
+        <h1>Bar</h1>
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
+        <p><a href="#foo">Back to foo</a></p>
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<!-- Start of second page -->
+<div class="ui-page" data-role="page" id="bar2">
+
+    <div data-role="header">
+        <h1>baf2</h1>
+    </div><!-- /header -->
+
+    <div data-role="content">
+        <p>I'm the second in the source order so I'm hidden when the page loads. I'm just shown if a link that references my id is beeing clicked.</p>
+        <p><a href="#foo">Back to foo</a></p>
+    </div><!-- /content -->
+
+    <div data-role="footer">
+        <h4>Page Footer</h4>
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+<script>
+    $('div.ui-page').on("swipeleft", function(){
+        var nextpage = $(this).next('div[data-role="page"]');
+        if (nextpage.length > 0) {
+            $.mobile.changePage(nextpage, "slide", false, true);
+            console.log('swipe');
+        }
+    });
+    $('div.ui-page').on("swiperight", function(){
+        var prevpage = $(this).prev('div[data-role="page"]');
+        if (prevpage.length > 0) {
+            $.mobile.changePage(prevpage, {transition: "slide",
+                reverse: true}, true, true);
+            console.log('swipe');
+        }
+    });
+
+</script>
+</body>
+</html>
