@@ -29,48 +29,51 @@
             var reclist = data['website'];
             var pageData='';
             $.each(reclist, function (id, data) {
-                idx=id+1;
+                var idx=id+1;
                 var number = idx/5;
+
+                //save to local storage:
+                localStorage.setItem('myimg_'+id,data['img']);
+                localStorage.setItem('myarticle_'+id,data['article']);
+                localStorage.setItem('mytitle_'+id,data['title']);
+                localStorage.setItem('mytime_'+id,data['time']);
+                localStorage.setItem('myauthor_'+id,data['author']);
 
                 //if (idx < 30) {
 
                 pageData +=
-                        "<div class="+'div_'+idx%5 +" class='content_div'>" +
+                        "<div class="+"div_"+idx%5 +" class = 'content_div'"+" data-idx="+idx+ ">" +
 
                             "<img class='img' src=" + data["img"] + ">" +
                             "<div class='article'>"+
 
-                                "<h3 class='title'>" + data["title"] + "</h3>" +
-                               "<span class='timeauthor'>" + data["time"] + " " + data["author"] + "</span>" +
+                            "<h3 class='title'>" + data["title"] + "</h3>" +
+                            "<span class='timeauthor'>" + data["time"] + " " + data["author"] + "</span>" +
                                  data["article"] + "</div>" +
 
                         "</div>" ;
-
-
-
-//                console.log('title:' + data["title"]);
+  //              console.log('title:' + data["title"]);
 //                console.log('time:' + data["time"]);
 //                console.log('author:' + data["author"]);
-//                console.log('img:' + data["img"]);
+    //            console.log('img:' + data["img"]);
 //                console.log('article:' + data["article"]);
 
                 if ((idx % 5 == 0) && (idx!=0)){
-                    console.log(idx);
                     var newPage = $(
                             "<div class='ui-page hidden' data-role='page'  id=" + "page_" + number + "> " +
-
+                                    "<a href=\"foo.html\" data-rel=\"dialog\">Open dialog</a>"+
                                 "<div class="+"css_"+number%5+">"+
                                     "<div  class='header'>" +
-                                    "<h3>Head</h3>" +
+                                    "<div data-role=\"header\">Head</div>" +
                                     "</div>" +
+                                    "<div class ='content_div'>"+
 
                                     pageData+  // this is the 5 news block
-
+                                    "</div>"+
                                     "<div class='footer'>" +
-                                    "<h3>Page Footer</h3>" +
+                                    "<div data-role=\"footer\"><span onclick='gohome()'>Home</span></div>" +
                                     "</div>" +
                                 "</div>"+
-
                             "</div>"
 
                     );
@@ -82,11 +85,34 @@
 
              //   }
 
+
             });
 
             //
+
             $('#page_0').removeClass("hidden");
             $.mobile.changePage('#page_1');
+
+            $('.content_div').children().click(function(){
+
+                var news_id=$(this).attr("data-idx") - 1;
+                var pageId=(Math.floor(news_id/5+1));
+                localStorage.setItem('current_page_id',pageId);
+                $this = $('#page_'+pageId);
+                $this.children().hide();
+                var detail_page = $(
+                        "<div class='detail_view'>" +
+                                "<a "+'onclick=goback()'+">Back</a>"+
+                                "<h3>"+localStorage.getItem('mytitle_'+news_id)+"</h3>"+
+                                "<span>"+localStorage.getItem('mytime_'+news_id)+"</span>"+
+                                "<span>"+localStorage.getItem('myauthor_'+news_id)+"</span>"+
+                                "<img src="+localStorage.getItem('myimg_'+news_id)+">"+
+                                "<p>"+localStorage.getItem('myarticle_'+news_id)+"</p>"+
+                                "</div>"
+                );
+               detail_page.appendTo($this);
+            });
+
 
 
             //below code to modify the real size of image and article
@@ -100,12 +126,13 @@
 //        $('.ui-grid-a').height(winH/3);
 //        $('.ui-grid-b').height(winH/2);
 
+
             //
             $('.ui-grid-a').height(basic_height_a);
             $('.ui-grid-b').height(basic_height_b);
 
             $('div.ui-page').on("swipeleft", function () {
-                console.log('swipe');
+                //console.log('swipe');
                 var nextpage = $(this).next('div[data-role="page"]');
 
                 if (nextpage.length > 0) {
@@ -115,7 +142,7 @@
                 }
             });
             $('div.ui-page').on("swiperight", function () {
-                console.log('swipe');
+               // console.log('swipe');
                 var prevpage = $(this).prev('div[data-role="page"]');
                 if (prevpage.length > 0) {
                     $.mobile.changePage(prevpage, {transition:"slide",
