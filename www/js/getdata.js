@@ -25,3 +25,12 @@ function goback(){
 function gohome(){
     $.mobile.changePage('#page_1');
 }
+
+function setting(){
+   //open setting dialog:
+
+  $('.header').append('<ol>' +
+      '<li>aaa</li>' +
+      '<li>bbb</li>' +
+      '</ol>');
+}
