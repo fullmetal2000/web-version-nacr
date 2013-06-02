@@ -27,10 +27,10 @@ function gohome(){
 }
 
 function setting(){
-   //open setting dialog:
-
-  $('.header').append('<ol>' +
-      '<li>aaa</li>' +
-      '<li>bbb</li>' +
-      '</ol>');
+    console.log("clicked");
+    $('.setting').toggle();
 }
+
+
+
+

@@ -23,8 +23,12 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="0.017688679">
-              <folding />
+            <state line="41" column="40" selection-start="1154" selection-end="1154" vertical-scroll-proportion="0.07185629">
+              <folding>
+                <marker date="1370201257000" expanded="true" signature="3341:3412" placeholder="..." />
+                <marker date="1370201257000" expanded="true" signature="3341:3686" placeholder="..." />
+                <marker date="1370201257000" expanded="true" signature="3341:3685" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -32,7 +36,7 @@
       <file leaf-file-name="getdata.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/getdata.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="14" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+            <state line="33" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -41,7 +45,7 @@
       <file leaf-file-name="news_record.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/news_record.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="698" column="0" selection-start="8977" selection-end="8977" vertical-scroll-proportion="0.0">
+            <state line="708" column="23" selection-start="9108" selection-end="9108" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -56,20 +60,22 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="muliple_pages.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/muliple_pages.html">
+      <file leaf-file-name="1.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="0" selection-start="1538" selection-end="1538" vertical-scroll-proportion="0.0">
+            <state line="23" column="3" selection-start="543" selection-end="852" vertical-scroll-proportion="-14.375">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="1.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/1.html">
+      <file leaf-file-name="2.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="29" selection-start="703" selection-end="703" vertical-scroll-proportion="-10.625">
-              <folding />
+            <state line="42" column="13" selection-start="2193" selection-end="2193" vertical-scroll-proportion="-2.18">
+              <folding>
+                <marker date="1370199056000" expanded="true" signature="4500:4715" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -91,16 +97,18 @@
         <option value="$PROJECT_DIR$/nacr.html" />
         <option value="$PROJECT_DIR$/www/nacr.html" />
         <option value="$PROJECT_DIR$/www/foo.html" />
-        <option value="$PROJECT_DIR$/www/js/getdata.js" />
+        <option value="$PROJECT_DIR$/www/2.html" />
+        <option value="$PROJECT_DIR$/2.html" />
         <option value="$PROJECT_DIR$/1.html" />
+        <option value="$PROJECT_DIR$/www/js/getdata.js" />
         <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="209" />
-    <option name="y" value="39" />
-    <option name="width" value="1440" />
+    <option name="x" value="123" />
+    <option name="y" value="22" />
+    <option name="width" value="1598" />
     <option name="height" value="1020" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -158,56 +166,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery_mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery_mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery_mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery_mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="www" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery_mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jquery_mobile" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="template" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -222,6 +180,9 @@
     <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/www" />
     </key>
@@ -264,13 +225,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="209" y="39" width="1440" height="1020" extended-state="0" />
-    <editor active="true" />
+    <frame x="123" y="22" width="1598" height="1020" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17572336" sideWeight="0.99555063" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15809524" sideWeight="0.99555063" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -338,20 +299,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="61" selection-start="1458" selection-end="1458" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="523" selection-end="523" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/news_record.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="38" vertical-scroll-proportion="0.0">
@@ -376,7 +323,11 @@
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="0" selection-start="983" selection-end="983" vertical-scroll-proportion="0.0">
-          <folding />
+          <folding>
+            <marker date="1370201257000" expanded="true" signature="3341:3412" placeholder="..." />
+            <marker date="1370201257000" expanded="true" signature="3341:3686" placeholder="..." />
+            <marker date="1370201257000" expanded="true" signature="3341:3685" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -418,31 +369,44 @@
         <state line="8" column="7" selection-start="310" selection-end="310" vertical-scroll-proportion="-5.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/getdata.js">
+    <entry file="file://$PROJECT_DIR$/2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="14" selection-start="547" selection-end="547" vertical-scroll-proportion="0.0">
+        <state line="42" column="13" selection-start="2193" selection-end="2193" vertical-scroll-proportion="-2.18">
+          <folding>
+            <marker date="1370199056000" expanded="true" signature="4500:4715" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="3" selection-start="543" selection-end="852" vertical-scroll-proportion="-14.375">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/news_record.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="698" column="0" selection-start="8977" selection-end="8977" vertical-scroll-proportion="0.0">
+        <state line="708" column="23" selection-start="9108" selection-end="9108" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/1.html">
+    <entry file="file://$PROJECT_DIR$/www/js/getdata.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="29" selection-start="703" selection-end="703" vertical-scroll-proportion="-10.625">
+        <state line="33" column="0" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="0.017688679">
-          <folding />
+        <state line="41" column="40" selection-start="1154" selection-end="1154" vertical-scroll-proportion="0.07185629">
+          <folding>
+            <marker date="1370201257000" expanded="true" signature="3341:3412" placeholder="..." />
+            <marker date="1370201257000" expanded="true" signature="3341:3686" placeholder="..." />
+            <marker date="1370201257000" expanded="true" signature="3341:3685" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

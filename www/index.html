@@ -11,6 +11,20 @@
     <script src="js/getdata.js"></script>
     <script src="js/buildpages.js"></script>
     <link rel="stylesheet" href="css/news_record.css"/>
+
+    <style>
+        .setting{
+            width: 20%;
+            position: relative;
+            top:100px;
+            display: none;
+            border: none;
+        }
+
+        .content_div{
+            border: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -66,8 +80,16 @@
                             "<div class='ui-page hidden' data-role='page'  id=" + "page_" + number + "> " +
                                  "<div class="+"css_"+number%5+">"+
                                     "<div  class='header'>" +
-                                    "<div data-role=\"header\">Head<span onclick='setting()'>Setting</span></div>" +
+                                        "<div data-role=\"header\">Head<span onclick='setting()'>Setting</span></div>" +
                                     "</div>" +
+                                    "<div class ='setting'>"+
+                                        '<ul data-role="listview" data-autodividers="false" data-inset="true" class="set ui-listview ui-listview-inset ui-corner-all ui-shadow">\
+                                        <li><a href="#">6park</a></li>\
+                                        <li><a href="#">creaders</a></li>\
+                                        <li><a href="#">wenxuecity</a></li>\
+                                        <li><a href="#">9368744</a></li>\
+                                        </ul>'+
+                                   "</div>"+
                                     "<div class ='content_div'>"+
                                     pageData+  // this is the 5 news block
                                     "</div>"+
@@ -113,6 +135,12 @@
                 );
                detail_page.appendTo($this);
             });
+
+
+            //click setting change category:
+            $('.setting li').click(function(){
+                console.log($(this).children().children().children().html());
+            })
 
 
 
