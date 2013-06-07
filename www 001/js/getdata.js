@@ -18,19 +18,18 @@ URLInfo = {
 
 function goback(){
 
-
-    $('#page_'+localStorage.getItem('current_page_id')).find('.content').children().show();
-
+    $('#page_'+localStorage.getItem('current_page_id')).children().show();
     $('.detail_view').hide();
-
-
 }
 
 function gohome(){
     $.mobile.changePage('#page_1');
 }
 
-
+function setting(){
+    console.log("clicked");
+    $('.setting').toggle();
+}
 
 
 

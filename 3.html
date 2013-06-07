@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div class="tt">Today</div>
+<script>
+    $(function(){
+    var newpage = $('<div class="p">aaa<div>bbb</div></div>');
+    newpage.appendTo('.tt');
+       // $('.tt').remove('.p');
+
+        $('.p').remove();
+    });
+</script>
+</body>
+</html>

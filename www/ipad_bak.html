@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"  />
+    <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>Hello World</title>
+
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+
+    <script type="text/javascript" src="cordova-2.7.0.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/getdata.js"></script>
+    <link rel="stylesheet" href="css/news_record.css"/>
+
+</head>
+<body>
+<style>
+
+
+
+    div.content{
+        margin-left:0 px;
+        padding:0px;
+    }
+    div.content_div{
+        border:1px solid;
+    }
+
+</style>
+<script>
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+
+
+        $(document).bind("orientationchange", function(e){
+            //getScreenHeight()
+
+            var orientation = $.event.special.orientationchange.orientation(),
+                    port = orientation === "portrait",
+                    winMin = port ? 480 : 320,
+                    winHeight = Math.max( winMin, $( window ).height() ),
+                    pageMin = Math.min( screenHeight, winHeight ),
+
+                    screenHeight = port ? screen.availHeight : screen.availWidth;
+
+
+            //resetActivePageHeight()
+            var aPage = $( "." + $.mobile.activePageClass ),
+                    aPagePadT = parseFloat( aPage.css( "padding-top" ) ),
+                    aPagePadB = parseFloat( aPage.css( "padding-bottom" ) );
+            aPage.css( "min-height", pageMin - aPagePadT - aPagePadB );
+
+
+            if (port){
+                $('.ui-grid-a').height(winHeight*47/100);
+                $('.ui-grid-b').height(winHeight*45/100);
+            }
+            else{
+                $('.ui-grid-a').height(winHeight*47/100);
+                $('.ui-grid-b').height(winHeight*42/100);
+            }
+        });
+
+///copy web code from here:
+        URLInfo.baseurl = "http://cnewsfinder.appspot.com/?";
+        URLInfo.keywords = 'sitename';
+        URLInfo.value = 'wenxuecity';
+        var url = URLInfo.baseurl + URLInfo.keywords + '=' + URLInfo.value;
+        var result = {};
+        $.getJSON(url, function (data) {
+
+            result = data;
+
+            var reclist = data['website'];
+            var pageData='';
+            $.each(reclist, function (id, data) {
+                var idx=id+1;
+                var number = idx/5;
+
+                //save to local storage:
+                localStorage.setItem('myimg_'+id,data['img']);
+                localStorage.setItem('myarticle_'+id,data['article']);
+                localStorage.setItem('mytitle_'+id,data['title']);
+                localStorage.setItem('mytime_'+id,data['time']);
+                localStorage.setItem('myauthor_'+id,data['author']);
+
+                //if (idx < 30) {
+
+                pageData +=
+                        "<div class="+"div_"+idx%5 +" class = 'content_div'"+" data-idx="+idx+ ">" +
+
+                                "<img class='img' src=" + data["img"] + ">" +
+                                "<div class='article'>"+
+
+                                "<h3 class='title'>" + data["title"] + "</h3>" +
+                                "<span class='timeauthor'>" + data["time"] + " " + data["author"] + "</span>" +
+                                data["article"] + "</div>" +
+
+                                "</div>" ;
+                //                console.log('title:' + data["title"]);
+                //                console.log('time:' + data["time"]);
+                //                console.log('author:' + data["author"]);
+                //                console.log('img:' + data["img"]);
+                //                console.log('article:' + data["article"]);
+
+                if ((idx % 5 == 0) && (idx!=0)){
+                    console.log(idx);
+                    var newPage = $(
+                            "<div class='ui-page hidden' data-role='page'  id=" + "page_" + number + "> " +
+
+                                    "<div class="+"css_"+number%5+">"+
+                                    "<div  class='header'>" +
+                                    "<div data-role=\"header\">Head</div>" +
+                                    "</div>" +
+                                    "<div class ='content_div'>"+
+
+                                    pageData+  // this is the 5 news block
+                                    "</div>"+
+                                    "<div class='footer'>" +
+                                    "<div data-role=\"footer\"><span onclick='gohome()'>Home</span></div>" +
+                                    "</div>" +
+                                    "</div>"+
+                                    "</div>"
+
+                    );
+
+                    newPage.appendTo($.mobile.pageContainer);
+                    //empty pageData
+                    pageData='';
+                }//,every 5 news create new page, empty pageData.
+
+                //   }
+
+
+            });
+
+            //
+
+            $('#page_0').removeClass("hidden");
+            $.mobile.changePage('#page_1');
+
+            $('.content_div').children().click(function(){
+
+                var news_id=$(this).attr("data-idx") - 1;
+                var pageId=(Math.floor(news_id/5+1));
+                localStorage.setItem('current_page_id',pageId);
+                $this = $('#page_'+pageId);
+                $this.children().hide();
+                var detail_page = $(
+                        "<div class='detail_view'>" +
+                                "<a "+'onclick=goback()'+">Back</a>"+
+                                "<h3>"+localStorage.getItem('mytitle_'+news_id)+"</h3>"+
+                                "<span>"+localStorage.getItem('mytime_'+news_id)+"</span>"+
+                                "<span>"+localStorage.getItem('myauthor_'+news_id)+"</span>"+
+                                "<img src="+localStorage.getItem('myimg_'+news_id)+">"+
+                                "<p>"+localStorage.getItem('myarticle_'+news_id)+"</p>"+
+                                "</div>"
+                );
+                detail_page.appendTo($this);
+            });
+
+
+
+            //below code to modify the real size of image and article
+            var winH = $(window).height();
+            var winW = $(window).width();
+
+            var basic_height_a = winH * 46 / 100,
+                    basic_height_b = winH * 43 / 100,
+                    basic_width = winW / 2;
+
+            //        $('.ui-grid-a').height(winH/3);
+            //        $('.ui-grid-b').height(winH/2);
+
+
+            //
+            $('.ui-grid-a').height(basic_height_a);
+            $('.ui-grid-b').height(basic_height_b);
+
+            $('div.ui-page').on("swipeleft", function () {
+                console.log('swipe');
+                var nextpage = $(this).next('div[data-role="page"]');
+
+                if (nextpage.length > 0) {
+                    $.mobile.changePage(nextpage, {transition:"slide",
+                        reverse:false}, true, true);
+
+                }
+            });
+            $('div.ui-page').on("swiperight", function () {
+                console.log('swipe');
+                var prevpage = $(this).prev('div[data-role="page"]');
+                if (prevpage.length > 0) {
+                    $.mobile.changePage(prevpage, {transition:"slide",
+                        reverse:true}, true, true);
+
+                }
+            });
+
+
+        });
+    }
+</script>
+</body>
+</html>
